@@ -1,1 +1,1 @@
-python grab_ticket_parallel 6 2
+python grab_ticket_parallel.py 6 2
