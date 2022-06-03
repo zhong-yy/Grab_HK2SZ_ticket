@@ -22,7 +22,7 @@ class BookQuanrantineHotel:
         self.driver.maximize_window()
         self.driver.get(self.login_url)
 
-        time.sleep(1)
+        time.sleep(2)
         # 关闭弹窗
         self.driver.find_element_by_xpath(
             '//*[@class="winpop" and @id="winLoginNotice"]/div[1]/div[1]/button'
@@ -87,8 +87,10 @@ class BookQuanrantineHotel:
         # 点击预约
         while True:
             # 点击"我要预约"
-            self.driver.find_element_by_xpath('//*[@class="wrap"]/a[@id="a_canBookHotel"]').click()
             try:
+                self.driver.find_element_by_xpath(
+                    '//*[@class="wrap"]/a[@id="a_canBookHotel"]'
+                ).click()
                 # 进入下一个页面，点击“预约”
                 self.driver.find_element_by_xpath(
                     '//*[@class="tzlist tongguanlist yuyuelist"]/div[1]/section['
@@ -97,7 +99,8 @@ class BookQuanrantineHotel:
                 ).click()
                 # print(x.text)
             except Exception as e:
-                #         print(e)
+                time.sleep(0.8)
+                print(e)
                 continue
             else:
                 #  print(
