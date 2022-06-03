@@ -1,6 +1,8 @@
 from ticket_booker import *
 import multiprocessing as mp
 import sys
+import os
+from os.path import expanduser
 
 
 def grab_ticket(chromedriver_path, account, password, account_type, day):
@@ -34,10 +36,11 @@ def grab_ticket_parallel(num_processes, chromedriver_path, account, password, ac
 if __name__ == "__main__":
     day = int(sys.argv[1])
     num_processes = int(sys.argv[2])
+    home_dir = expanduser("~")
     print(f"使用{num_processes}个进程，抢第{day}天的票")
     grab_ticket_parallel(
         num_processes=num_processes,
-        chromedriver_path="/home/yyzhong/chromedriver_linux64/chromedriver",
+        chromedriver_path=os.path.join(home_dir, "chromedriver_linux64/chromedriver"),
         account="CC5639520",
         password="zhong123456",
         account_type=2,
