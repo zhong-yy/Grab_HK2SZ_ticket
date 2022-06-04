@@ -5,6 +5,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from PIL import Image
@@ -17,10 +18,13 @@ import ddddocr
 
 class BookQuanrantineHotel:
     def __init__(self, chromedriver_path):
+        chrome_options = Options()
+        chrome_options.add_experimental_option("detach", True)    
         self.login_url = "https://hk.sz.gov.cn:8118/"
-        self.driver = webdriver.Chrome(executable_path=chromedriver_path)
+        self.driver = webdriver.Chrome(executable_path=chromedriver_path,options=chrome_options)
         self.driver.maximize_window()
         self.driver.get(self.login_url)
+        
 
         time.sleep(2)
         # 关闭弹窗
