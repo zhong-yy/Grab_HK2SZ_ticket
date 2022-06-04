@@ -63,7 +63,7 @@ class BookQuanrantineHotel:
                 )
                 verification_code_image.screenshot("code.png")
                 # 识别
-                ocr = ddddocr.DdddOcr()
+                ocr = ddddocr.DdddOcr(old=True)
                 with open("code.png", "rb") as f:
                     img_bytes = f.read()
                 ocr_result = ocr.classification(img_bytes)
