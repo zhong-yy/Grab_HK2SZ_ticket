@@ -99,7 +99,7 @@ class BookQuanrantineHotel:
                 ).click()
                 # print(x.text)
             except Exception as e:
-                time.sleep(0.8)
+                #time.sleep(0.1)
                 print(e)
                 continue
             else:
@@ -112,12 +112,18 @@ class BookQuanrantineHotel:
                 #  )
                 break
         # 持续点击
+        x=0
         while True:
+            x=x+1
+            if x==1000:
+                self.driver.refresh()
+                x=0             
             try:
                 self.driver.find_element_by_xpath(
                     '//*[@class="tzlist tongguanlist yuyuelist"]/div[1]/section['
                     + str(day)
                     + "]/div/div[3]/div/button"
                 ).click()
-            except:
+            except Exception as e:
                 break
+  

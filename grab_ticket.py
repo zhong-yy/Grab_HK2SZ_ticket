@@ -22,5 +22,5 @@ grab_ticket(
     account="CC5639520",
     password="zhong123456",
     account_type=2,
-    day=7,
+    day=5,
 )
