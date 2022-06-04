@@ -38,11 +38,14 @@ if __name__ == "__main__":
     num_processes = int(sys.argv[2])
     home_dir = expanduser("~")
     print(f"使用{num_processes}个进程，抢第{day}天的票")
+    with open("./account.txt","r") as f:
+        account=f.readline().strip()
+        password=f.readline().strip()    
     grab_ticket_parallel(
         num_processes=num_processes,
         chromedriver_path=os.path.join(home_dir, "chromedriver_linux64/chromedriver"),
-        account="CC5639520",
-        password="zhong123456",
+        account=account,
+        password=password,
         account_type=2,
         day=day,
     )

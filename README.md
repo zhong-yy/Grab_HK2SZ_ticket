@@ -10,7 +10,18 @@
 
 ubuntu下需要下载chromedriver: https://chromedriver.chromium.org/
 
-找到与chrome浏览器版本对应的版本，下载，解压后把chrome_driver文件夹放到home目录下
+找到与chrome浏览器版本对应的版本，下载，解压后把`chromedriver_linux64`文件夹放到home目录下
+
+# 使用
+
+在当前目录新建一个account.txt文件，写入账号和密码：
+
+```
+港澳通行证账号
+健康驿站系统密码
+```
+
+
 
 # problems
 
