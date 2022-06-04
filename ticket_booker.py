@@ -75,7 +75,7 @@ class BookQuanrantineHotel:
                 verification_input.send_keys(ocr_result)
                 # 点击登陆
                 self.driver.find_element_by_xpath('//*[@class="Btngroup"]/button[1]').click()
-                time.sleep(1.5)
+                time.sleep(2)
             except:
                 # 如果成功登陆，就找不到“登陆”按钮了，报exception,说明成功登陆了，跳出循环
                 break
