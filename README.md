@@ -21,7 +21,7 @@ ubuntu下需要下载chromedriver: https://chromedriver.chromium.org/
 健康驿站系统密码
 ```
 
-
+运行`python grab_ticket.py`
 
 # problems
 
